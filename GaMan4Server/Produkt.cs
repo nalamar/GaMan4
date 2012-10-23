@@ -17,7 +17,7 @@ namespace GaMan4Server
         private int endeAnriss;
         private int endeGramm;
         
-        // Funktionen        
+        // Funktionen
         public string ProduktName 
         {
             get
