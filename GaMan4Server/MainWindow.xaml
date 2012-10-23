@@ -1,11 +1,22 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
         xmlns:local="clr-namespace:GaMan4Server" x:Class="GaMan4Server.MainWindow"
         Title="MainWindow" Height="768" Width="1024">
     <Grid>
-        <Label x:Name="Testlabel" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.73,-1.006"/>
-        <DataGrid x:Name="dgv1" HorizontalAlignment="Left" Margin="313,76,0,0" VerticalAlignment="Top" Height="239" Width="268"/>
-
+        <ListBox HorizontalAlignment="Left" Height="183" Margin="342,69,0,0" VerticalAlignment="Top" Width="286" ItemsSource="{DynamicResource ProduktListData}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=ProduktName}"/>
+                        <TextBlock Text="{Binding Path=ProduktVK}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
+    <Window.Resources>
+        <local:ProduktList x:Key="ProduktListData"/>
+    </Window.Resources>    
 </Window>
+

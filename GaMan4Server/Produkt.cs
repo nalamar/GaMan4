@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.ObjectModel;
 namespace GaMan4Server
 {
     public class Produkt
@@ -18,6 +19,11 @@ namespace GaMan4Server
         private int endeGramm;
         
         // Funktionen
+        public Produkt(string name)
+        {
+            this.produktName = name;
+        }
+        
         public string ProduktName 
         {
             get
@@ -160,6 +166,18 @@ namespace GaMan4Server
             {
                 endeGramm = value;
             }
+        }
+    }
+
+    public class ProduktList : ObservableCollection<Produkt>
+    {
+        public ProduktList()
+            : base()
+        {
+            Add(new Produkt("Becks Pilsner"));
+            Add(new Produkt("Becks Gold"));
+            Add(new Produkt("Becks Level7"));
+            Add(new Produkt("Becks Ice"));
         }
     }
 }
