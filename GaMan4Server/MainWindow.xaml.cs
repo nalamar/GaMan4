@@ -13,8 +13,12 @@ namespace GaMan4Server
         public MainWindow()
         {
             InitializeComponent();
-            
-            
+            List<Produkt> plist = new List<Produkt>();
+            plist.Add(new Produkt("Becks Pilsner"));
+            plist[0].ProduktVK = 2.50;
+            plist[0].GebindeVK = 0.33;
+            plist[0].AnfangVoll = 296;
+            dg1.ItemsSource = plist;
             
         }
     }
