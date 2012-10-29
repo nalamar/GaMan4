@@ -12,38 +12,40 @@ namespace GaMan4Server
     {
         public MainWindow()
         {
-            InitializeComponent();            
-            // Liste mit "Lagern" anlegen
-            List<Bar> storeList = new List<Bar>();
+            InitializeComponent();
+            // Liste mit Locations anlegen
+            List<Location> locList = new List<Location>();
+
+            // Location zur Liste hinzufügen
+            locList.Add(new Location("Bunker"));
+
+            // Bar zur Location hinzufügen
+            locList[0].storeList.Add(new Bar(0, "Bar 2"));
             
-            // Vorrübergehend 2 "Lager" zur Liste hinzufügen, hier Speziallager Bar
-            storeList.Add(new Bar(0, "Bar 2"));
-            storeList.Add(new Bar(2, "Bar 3"));
-            
-            // Der ComboBox die Auswahlmöglichkeiten hinzufügen
+            // Der BarComboBox die Lager-Auswahlmöglichkeiten hinzufügen
             CbBar.DisplayMemberPath = "Name";
             CbBar.SelectedValuePath = "Id";
-            CbBar.ItemsSource = storeList;
+            CbBar.ItemsSource = locList[0].storeList;
             CbBar.SelectedIndex = 0;
             
             // Der Bar mit dem Index 0 5 Produkte mit diversen Eigenschaften hinzufügen
-            storeList[0].plist.Add(new Produkt(1, "Becks Pilsner", 0.33, 2.50));
-            storeList[0].plist.Add(new Produkt(2, "Becks Gold", 0.33, 2.50));
-            storeList[0].plist.Add(new Produkt(3, "Becks Level 7", 0.33, 2.50));
-            storeList[0].plist.Add(new Produkt(4, "Becks Ice", 0.33, 2.50));
-            storeList[0].plist.Add(new Produkt(5, "Parliament Vodka", 0.04, 3.00));
-            storeList[0].plist[0].AnfangVoll = 296;
+            locList[0].storeList[0].plist.Add(new Produkt(1, "Becks Pilsner", 0.33, 2.50));
+            locList[0].storeList[0].plist.Add(new Produkt(2, "Becks Gold", 0.33, 2.50));
+            locList[0].storeList[0].plist.Add(new Produkt(3, "Becks Level 7", 0.33, 2.50));
+            locList[0].storeList[0].plist.Add(new Produkt(4, "Becks Ice", 0.33, 2.50));
+            locList[0].storeList[0].plist.Add(new Produkt(5, "Parliament Vodka", 0.04, 3.00));
+            locList[0].storeList[0].plist[0].AnfangVoll = 296;
             
             // Dem spezillen Lager "Bar X" Personal hinzufügen
-            storeList[0].personal.Add(new Person(1, "Jan", "Rothe"));
+            locList[0].storeList[0].personal.Add(new Person(1, "Jan", "Rothe"));
             
             // Aus der ComboBox auslesen, welches Lager/Bar ausgewählt ist
             Bar tmp = (Bar)CbBar.SelectedItem;
             int id = tmp.Id;
             
             // Anhand des gewählten Lagers/bar die Produkt und Personalliste wählen und anzeigen.
-            dgProdukte.ItemsSource = storeList[id].plist;
-            dgPersonal.ItemsSource = storeList[id].personal;            
+            dgProdukte.ItemsSource = locList[0].storeList[id].plist;
+            dgPersonal.ItemsSource = locList[0].storeList[id].personal;            
             
         }
     }

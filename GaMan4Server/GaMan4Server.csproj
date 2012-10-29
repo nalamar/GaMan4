@@ -69,6 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bar.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Store.cs" />
     <Page Include="MainWindow.xaml">

@@ -13,7 +13,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Preis" Binding="{Binding Path=ProduktVK,StringFormat={} {0:C} }">
+                <DataGridTextColumn Header="Preis" Binding="{Binding Path=ProduktVK,Mode=TwoWay, StringFormat={} {0:C}}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="TextAlignment" Value="Center" />
@@ -51,7 +51,24 @@
             </DataGrid.Columns>            
         </DataGrid>
         <ComboBox x:Name="CbBar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="dgPersonal" HorizontalAlignment="Left" Margin="806,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,0.385" Height="85" Width="200"/>
+        <DataGrid x:Name="dgPersonal" HorizontalAlignment="Left" Margin="806,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,0.385" Height="85" Width="200" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding Path=Nachname}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Left" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Path=Vorname}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Left" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>                
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>    
     <Window.Resources>
         <!--<local:ProduktList x:Key="ProduktListData"/>        -->
