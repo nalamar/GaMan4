@@ -4,7 +4,7 @@
         xmlns:local="clr-namespace:GaMan4Server" x:Class="GaMan4Server.MainWindow"
         Title="MainWindow" Height="768" Width="1024" Language="de">
     <Grid>        
-        <DataGrid x:Name="dg1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="996" Height="718" AutoGenerateColumns="False">
+        <DataGrid x:Name="dgProdukte" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="996" Height="628" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                 <DataGridTextColumn Header="Produkt" Binding="{Binding Path=ProduktName}">
                     <DataGridTextColumn.ElementStyle>
@@ -50,6 +50,8 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>            
         </DataGrid>
+        <ComboBox x:Name="CbBar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dgPersonal" HorizontalAlignment="Left" Margin="806,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.583,0.385" Height="85" Width="200"/>
     </Grid>    
     <Window.Resources>
         <!--<local:ProduktList x:Key="ProduktListData"/>        -->

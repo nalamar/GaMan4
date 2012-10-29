@@ -13,6 +13,17 @@ namespace GaMan4Server
         private string name;
         public List<Produkt> plist = new List<Produkt>();
 
+        public Store() 
+        {
+
+        }
+        
+        public Store (int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
+        
         public int Id
         {
             get { return id; }
