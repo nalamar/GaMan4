@@ -24,6 +24,20 @@ namespace GaMan4Server
         {
             this.produktName = name;
         }
+
+        public Produkt(int id, string name)
+        {
+            this.ProduktID = id;
+            this.produktName = name;
+        }
+
+        public Produkt(int id, string name, double gVK, double pVK)
+        {
+            this.produktID = id;
+            this.produktName = name;
+            this.gebindeVK = gVK;
+            this.produktVK = pVK;
+        }
         
         // Funktionen
         public int ProduktID
