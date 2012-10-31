@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaMan4Server", "GaMan4Server\GaMan4Server.csproj", "{0BE730CA-1FA3-4C7B-AE4F-E3FF705327F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protocol", "Protocol\Protocol.csproj", "{0ABA04F3-25BF-459A-89C5-4EF3EE7A5CE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{0BE730CA-1FA3-4C7B-AE4F-E3FF705327F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE730CA-1FA3-4C7B-AE4F-E3FF705327F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE730CA-1FA3-4C7B-AE4F-E3FF705327F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABA04F3-25BF-459A-89C5-4EF3EE7A5CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABA04F3-25BF-459A-89C5-4EF3EE7A5CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABA04F3-25BF-459A-89C5-4EF3EE7A5CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABA04F3-25BF-459A-89C5-4EF3EE7A5CE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
