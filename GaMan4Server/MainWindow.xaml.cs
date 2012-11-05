@@ -3,7 +3,6 @@ using System.Windows;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Forms;
 
 namespace GaMan4Server
 {
@@ -71,9 +70,8 @@ namespace GaMan4Server
         }
 
         private void addText(Server s, LogText e)
-        {
-            string text = e.SetText.ToString();            
-            this.Dispatcher.Invoke(new Action<System.Windows.Controls.TextBox>(TbLog=>TbLog.Text += Environment.NewLine + text), this.TbLog);
+        {            
+            this.Dispatcher.Invoke(new Action<System.Windows.Controls.TextBox>(TbLog => TbLog.Text += Environment.NewLine + e.SetText.ToString()), this.TbLog);
         }
         
         public void Subscribe(Server s)
