@@ -5,7 +5,7 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Protocol.Message
+namespace ProtocolLibrary.Message
 {
     /// <summary>
     /// A class with client information. This is primarily a data storing

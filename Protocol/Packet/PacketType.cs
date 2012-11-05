@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Protocol.Packet
+namespace ProtocolLibrary.Packet
 {
     /// <summary>
     /// Stores all possible packet types in the protocol.

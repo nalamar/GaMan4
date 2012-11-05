@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Protocol.Packet;
+using ProtocolLibrary.Packet;
 
-namespace Protocol.Event
+namespace ProtocolLibrary.Event
 {
     /// <summary>
     /// Packet events.

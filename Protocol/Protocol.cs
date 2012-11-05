@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net.Sockets;
-using Protocol.Packet;
-using Protocol.Attributes;
+using ProtocolLibrary.Packet;
+using ProtocolLibrary.Attributes;
 
-namespace Protocol
+namespace ProtocolLibrary
 {
-    // Protocol based on Codeplanets CLient-Server-Model Tutorial
-    [Author("Jan Rothe", "info@nalamar.de", "GaMan Protocol", "http://www.nalamar.de/")]
-    class Protocol
+    [Author("Jan Rothe", "info@nalamar.de", "GaMan4", "http://www.nalamar.de/")]
+    public class Protocol
     {
         public static IPacket CreatePacket(SocketType type)
         {

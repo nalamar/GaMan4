@@ -5,7 +5,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Net;
 
-namespace Protocol.Event
+namespace ProtocolLibrary.Event
 {
     /// <summary>
     /// All server events.

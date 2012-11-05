@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Forms;
 
 namespace GaMan4Server
 {
@@ -13,6 +15,25 @@ namespace GaMan4Server
         public MainWindow()
         {
             InitializeComponent();
+
+            Server server = new Server("::1", 4850);
+            Subscribe(server);            
+            TbLog.AppendText("GaMan 4 Server" + Environment.NewLine);
+            if (server.Start())
+            {
+                TbLog.AppendText("Server gestartet" + Environment.NewLine);
+            }
+            else
+            {
+                TbLog.AppendText("Server nicht gestartet" + Environment.NewLine);
+            }
+
+
+            /////////////////////////////////////////////////
+            ///     Beispieldaten zum Anwendungstest      ///
+            /// /////////////////////////////////////////////
+            
+
             // Liste mit Locations anlegen
             List<Location> locList = new List<Location>();
 
@@ -45,8 +66,19 @@ namespace GaMan4Server
             
             // Anhand des gewählten Lagers/bar die Produkt und Personalliste wählen und anzeigen.
             dgProdukte.ItemsSource = locList[0].storeList[id].plist;
-            dgPersonal.ItemsSource = locList[0].storeList[id].personal;            
+            dgPersonal.ItemsSource = locList[0].storeList[id].personal;
             
+        }
+
+        private void addText(Server s, LogText e)
+        {
+            string text = e.SetText.ToString();            
+            this.Dispatcher.Invoke(new Action<System.Windows.Controls.TextBox>(TbLog=>TbLog.Text += Environment.NewLine + text), this.TbLog);
+        }
+        
+        public void Subscribe(Server s)
+        {
+            s.Log += new Server.LogHandler(addText);
         }
     }
 }

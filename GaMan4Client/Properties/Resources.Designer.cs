@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GaMan4Server.Properties {
+namespace GaMan4Client.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace GaMan4Server.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GaMan4Server.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GaMan4Client.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,24 +57,6 @@ namespace GaMan4Server.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die xml/contacts.xml ähnelt.
-        /// </summary>
-        internal static string XMLFileName {
-            get {
-                return ResourceManager.GetString("XMLFileName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Can&apos;t read xml file! ähnelt.
-        /// </summary>
-        internal static string XMLReadingFailed {
-            get {
-                return ResourceManager.GetString("XMLReadingFailed", resourceCulture);
             }
         }
     }

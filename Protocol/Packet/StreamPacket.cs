@@ -4,10 +4,10 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
-using Protocol.Cryptography;
+using ProtocolLibrary.Cryptography;
 using System.Diagnostics;
 
-namespace Protocol.Packet
+namespace ProtocolLibrary.Packet
 {
     /// <summary>
     /// Represents a network packet based on TCP (Stream) in the protocol. Every packet consists

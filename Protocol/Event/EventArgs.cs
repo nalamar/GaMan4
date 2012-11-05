@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-using Protocol;
+using ProtocolLibrary;
 
-namespace Protocol.Event
+namespace ProtocolLibrary.Event
 {
     /// <summary>
     /// Called delegate, when a packet was sent successfully.

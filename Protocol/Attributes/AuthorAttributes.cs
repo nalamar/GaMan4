@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Protocol.Attributes
+namespace ProtocolLibrary.Attributes
 {
     /// <summary>
     /// This optional attribute can be used to display author information in the 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Protocol.Cryptography
+namespace ProtocolLibrary.Cryptography
 {
     /// <summary>
     /// Performs AES (Advanced Encryption Standard) cryptography

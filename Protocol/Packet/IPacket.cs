@@ -5,7 +5,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 
-namespace Protocol.Packet
+namespace ProtocolLibrary.Packet
 {
     /// <summary>
     /// The interface for all network packets.

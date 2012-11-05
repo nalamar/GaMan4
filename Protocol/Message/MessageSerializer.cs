@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace Protocol.Message
+namespace ProtocolLibrary.Message
 {
     /// <summary>
     /// Serializes and Deserializes a serializable object.

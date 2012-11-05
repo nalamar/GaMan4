@@ -5,7 +5,7 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
-namespace Protocol.Event
+namespace ProtocolLibrary.Event
 {
     /// <summary>
     /// A client event.

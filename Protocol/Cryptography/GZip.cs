@@ -5,7 +5,7 @@ using System.Text;
 using System.IO.Compression;
 using System.IO;
 
-namespace Protocol.Cryptography
+namespace ProtocolLibrary.Cryptography
 {
     /// <summary>
     /// A simple compression class in the protocol to reduce packet sizes
