@@ -26,6 +26,7 @@ namespace GaMan4Server
             {
                 TbLog.AppendText("Server nicht gestartet" + Environment.NewLine);
             }
+            server.CreateDemoXML();
 
 
             /////////////////////////////////////////////////

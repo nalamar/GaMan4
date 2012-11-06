@@ -18,6 +18,7 @@ using ProtocolLibrary.Message;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Xml.Linq;
 
 
 namespace GaMan4Server
@@ -316,8 +317,8 @@ namespace GaMan4Server
         }
 
 
-                /// <summary>
-        /// Log a mesage to the console.
+        /// <summary>
+        /// Log a mesage to the Textbox via an Eventhandler.
         /// </summary>
         /// <param name="status"></param>
         /// <param name="endPoint"></param>
@@ -403,62 +404,89 @@ namespace GaMan4Server
         /// <summary>
         /// Creates a demo xml file, if no file exists.
         /// </summary>
-        /* public void CreateDemoXML()
+         public void CreateDemoXML()
         {
-            Contacts contacts = new Contacts();
-            //contacts.Namespace = "Server";
+             XNamespace locNM = "urn:lst-loc:loc";
+             XDocument xDoc = new XDocument(
+                 new XDeclaration("1.0", "UTF-16", null),
+                 new XElement(locNM + "Locations",
+                     new XElement("Location",
+                         new XElement("LocId", "1"),
+                         new XElement("Name", "Bunker"),
+                         new XElement("Store",
+                            new XElement("StoreId", "1"),
+                            new XElement("StoreName", "Bar 2"),
+                            new XElement("Products",
+                                new XElement("PID", "1"),
+                                new XElement("PName", "Becks Pils"),
+                                new XElement("PVK", "2,50"),
+                                new XElement("PVKg", "0,33"),
+                                new XElement("PEK", "0,69"),
+                                new XElement("PEKg", "0,33"),
+                                new XElement("PID", "2"),
+                                new XElement("PName", "Becks Gold"),
+                                new XElement("PVK", "2,50"),
+                                new XElement("PVKg", "0,33"),
+                                new XElement("PEK", "0,69"),
+                                new XElement("PEKg", "0,33")),
+                            new XElement("StoreId", "2"),
+                            new XElement("StoreName", "Bar 3"),
+                            new XElement("Products",
+                                new XElement("PID", "1"),
+                                new XElement("PName", "Becks Pils"),
+                                new XElement("PVK", "2,50"),
+                                new XElement("PVKg", "0,33"),
+                                new XElement("PEK", "0,69"),
+                                new XElement("PEKg", "0,33"),
+                                new XElement("PID", "2"),
+                                new XElement("PName", "Becks Gold"),
+                                new XElement("PVK", "2,50"),
+                                new XElement("PVKg", "0,33"),
+                                new XElement("PEK", "0,69"),
+                                new XElement("PEKg", "0,33"))),
+                         new XElement("LocId", "2"),
+                         new XElement("Name", "Reithalle"),
+                            new XElement("Store",
+                            new XElement("StoreId", "3"),
+                            new XElement("StoreName", "Bar 12"),
+                            new XElement("Products",
+                                new XElement("PID", "3"),
+                                new XElement("PName", "Hasseröder Pils"),
+                                new XElement("PVK", "3,00"),
+                                new XElement("PVKg", "0,4"),
+                                new XElement("PEK", "0,71"),
+                                new XElement("PEKg", "50,00"),
+                                new XElement("PID", "4"),
+                                new XElement("PName", "Köstritzer Schwarz"),
+                                new XElement("PVK", "3,00"),
+                                new XElement("PVKg", "0,4"),
+                                new XElement("PEK", "0,71"),
+                                new XElement("PEKg", "30,00")),
+                            new XElement("StoreId", "4"),
+                            new XElement("StoreName", "Bar 13"),
+                            new XElement("Products",
+                                new XElement("PID", "3"),
+                                new XElement("PName", "Hasseröder Pils"),
+                                new XElement("PVK", "3,00"),
+                                new XElement("PVKg", "0,4"),
+                                new XElement("PEK", "0,71"),
+                                new XElement("PEKg", "50,00"),
+                                new XElement("PID", "4"),
+                                new XElement("PName", "Köstritzer Schwarz"),
+                                new XElement("PVK", "3,00"),
+                                new XElement("PVKg", "0,4"),
+                                new XElement("PEK", "0,71"),
+                                new XElement("PEKg", "30,00"))))));
 
-            DataRow newRow = contacts.Tables["Kontakte"].NewRow();
-            newRow["Name"] = "Stefan Müller";
-            newRow["Firma"] = "Lufthansa AG";
-            newRow["Adresse"] = "Elfenbeinstrasse 25, 80935 München";
-            newRow["Email"] = "stefanmueller@mail.de";
-            newRow["Telefon"] = "98362550";
-            newRow["Handy"] = "01746352423";
-            newRow["Fax"] = "98362551";
-            newRow["Anrede"] = "Herr";
-            newRow["Titel"] = "Dipl.-Ing. (FH)";
-            newRow["Position"] = "Abteilungsleiter";
-            contacts.Tables["Kontakte"].Rows.Add(newRow);
+             StringWriter sw = new StringWriter();
+             XmlWriter xWrite = XmlWriter.Create(sw);
+             xDoc.Save(xWrite);
+             xWrite.Close();
 
-            newRow = contacts.Tables["Kontakte"].NewRow();
-            newRow["Name"] = "Barbara Bauer";
-            newRow["Firma"] = "BMW";
-            newRow["Adresse"] = "Burgstrasse 2, 14935 Berlin";
-            newRow["Email"] = "barbara@bmw.de";
-            newRow["Telefon"] = "82272550";
-            newRow["Handy"] = "017463764254";
-            newRow["Fax"] = "0892272573";
-            newRow["Anrede"] = "Frau";
-            newRow["Titel"] = "Dr.";
-            newRow["Position"] = "Mitarbeiterin";
-            contacts.Tables["Kontakte"].Rows.Add(newRow);
+             xDoc.Save("xml/demo.xml");
+                         
 
-            // Store dataset
-            contacts.AcceptChanges();
-
-            FileStream fsWriteXml = null;
-            XmlTextWriter xmlWriter = null;
-
-            try
-            {
-                // Create FileStream    
-                fsWriteXml = new FileStream(Properties.Resources.XMLFileName, FileMode.Create);
-                // Create an XmlTextWriter to write the file.
-                xmlWriter = new XmlTextWriter(fsWriteXml, Encoding.Unicode);
-                // Use WriteXml to write the document.
-                contacts.WriteXml(xmlWriter, XmlWriteMode.IgnoreSchema);
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                // Close the FileStream.
-                fsWriteXml.Close();
-            }
-        }*/
+        }
 
         /// <summary>
         /// Reads the local contact list.
