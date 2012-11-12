@@ -74,6 +74,7 @@
     <Compile Include="Location.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Server.cs" />
+    <Compile Include="ServerFunctions.cs" />
     <Compile Include="Store.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -27,7 +27,7 @@ namespace GaMan4Server
     /// The main server application. The server accepts client connections
     /// on a thred-per-client base. It will send data to the clients.
     /// </summary>
-    public class Server
+    public partial class Server
     {
         /// <summary>
         /// Init a new server.
@@ -233,9 +233,9 @@ namespace GaMan4Server
         /// the list. 
         /// </summary>
         /// <param name="packet"></param>
-        public void SendContactList(IPacket packet)
+        /*public void SendContactList(IPacket packet)
         {
-            //LogConsole("asked for contact list. Sending " + _contacts.Tables["Kontakte"].Rows.Count + " contact(s).", packet.Source);
+            LogConsole("asked for contact list. Sending " + _contacts.Tables["Kontakte"].Rows.Count + " contact(s).", packet.Source);
             Encoding enc = Encoding.Unicode;
             IPacket replyPacket = Protocol.CreatePacket(SocketType.Stream);
             replyPacket.Type = PacketType.ContactListReply;
@@ -244,7 +244,7 @@ namespace GaMan4Server
             replyPacket.Destination = packet.Source;
             replyPacket.Data = SerializeContacts(enc);
             Send(replyPacket);
-        }
+        }*/
 
         /// <summary>
         /// Send the specific contact.
@@ -285,7 +285,7 @@ namespace GaMan4Server
             if (client != null)
             {
                 client.ClientInfo = (ClientInformation)MessageSerializer.Deserialize(packet.Data);
-                LogConsole("switched name to " + client.ClientInfo.Name + ".", client.LocalIPEndPoint);
+                //LogConsole("switched name to " + client.ClientInfo.Name + ".", client.LocalIPEndPoint);
             }
         }
 
